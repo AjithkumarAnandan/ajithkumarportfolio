@@ -1,0 +1,56 @@
+{
+  "Header": {
+    "name": "ஏ அஜித் குமார்",
+    "role": "React JS டெவலப்பர்",
+    "phone": "+91 7708192049",
+    "email": "ajithkumaranandandev@gmail.com",
+    "linkedin": "ajithkumar-anandan-developer",
+    "location": "கும்மிடிப்பொண்டி, சென்னை, தமிழ்நாடு, இந்தியா",
+    "linkedinLabel": "லிங்க்ட்இன்"
+  },
+  "Navigation": {
+    "home": "முகப்பு",
+    "about": "என்னை பற்றி",
+    "contact": "தொடர்பு",
+    "experience": "அனுபவம்"
+  },
+  "Home": {
+    "homeText": "Next.js மற்றும் React.js டெவலப்பர், வலை பயன்பாட்டு அபிவிருத்தியில் 5 ஆண்டுகள் அனுபவம் கொண்டவர், சாப்ட்வேர் அபிவிருத்தி வாழ்க்கைச் சுழற்சி (SDLC) பற்றிய ஆழமான அறிவை உடையவர். React.js, Next.js, JavaScript, TypeScript, CSS மற்றும் HTML பயன்படுத்தி அளவிடக்கூடிய, உயர் செயல்திறன் வாய்ந்த வலை பயன்பாடுகளை உருவாக்குவதில் திறமை பெற்றவர். நவீன UI/UX வடிவமைப்பு, state management (Redux) செயல்படுத்துதல், SSR, SSG மற்றும் ISR மூலம் செயல்திறன் மேம்படுத்தல், மற்றும் பாதுகாப்பான அங்கீகார முறைகள் (JWT, OAuth) இணைத்தல் ஆகியவற்றில் நிபுணர். சுத்தமான, பராமரிக்கக்கூடிய கோடுகளை எழுதுவதில் ஆர்வம் கொண்டவர் மற்றும் பயனர் அனுபவங்களை துல்லியமாக வழங்குபவர்.",
+    "aboutText": "நான் உருவாக்குவதை மிகவும் விரும்பும் ஆர்வமுள்ள டெவலப்பர்.",
+    "contactText": "என்னை ajithkumaranandandev@gmail.com இல் தொடர்பு கொள்ளலாம்.",
+    "experienceText": "முழு-ஸ்டாக் அபிவிருத்தியில் 5+ ஆண்டுகளுக்கு மேலான அனுபவம் கொண்டவன்."
+  },
+  "PersonalDetails": {
+    "PersonalDetails": "தனிப்பட்ட விவரங்கள்",
+    "name": "பெயர்",
+    "dob": "பிறந்த தேதி",
+    "age": "வயது",
+    "bloodGroup": "இரத்த வகை",
+    "maritalStatus": "திருமண நிலை",
+    "religion": "மதம்",
+    "nativePlace": "பிறந்த ஊர்",
+    "edit": "தொகு",
+    "nameField": "ஆ அஜித்குமார்",
+    "dobField": "05-06-1996",
+    "ageField": "29",
+    "bloodGroupField": "O+",
+    "maritalStatusField": "திருமணம் செய்யாதவர்",
+    "religionField": "இந்து",
+    "cityField": "சென்னை"
+  },
+  "EducationDetails": {
+    "EducationDetails": "கல்வி விவரங்கள்",
+    "school": "பள்ளி/கல்லூரி",
+    "degree": "படிப்பு",
+    "fieldOfStudy": "பாடப்பிரிவு",
+    "yearOfGraduation": "பட்டம் பெற்ற ஆண்டு",
+    "grade": "மதிப்பெண்/சதவீதம்",
+    "certifications": "கூடுதல் சான்றிதழ்கள்",
+    "schoolField": "டி ஜே எஸ் இன்ஜினியரிங் கல்லூரி",
+    "degreeField": "Bachelor of Engineering",
+    "fieldOfStudyField": "இயந்திரப் பொறியியல்",
+    "yearOfGraduationField": "2018",
+    "gradeField": "72%",
+    "certificationsField": "சான்றளிக்கப்பட்ட ரியாக்ட் டெவலப்பர்"
+  }
+}
