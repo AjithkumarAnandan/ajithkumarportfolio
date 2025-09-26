@@ -4,8 +4,7 @@ import {
   dashboardPutSlice,
   dashboardSlice,
 } from "./crud/redux.reducer";
-import { productsApi } from "./productsApi";
-
+import { postDashboardSlice } from "./dashboard/dashboard.reducer";
 export const reduxstore = (preloadedState = {}) => {
   return configureStore({
     reducer: {
@@ -22,6 +21,7 @@ export const reduxclientstore = configureStore({
   reducer: {
     dashboardUpdate: dashboardPutSlice.reducer,
     dashboardDelete: dashboardDeleteSlice.reducer,
+    feedback: postDashboardSlice.reducer,
     // [productsApi.reducerPath]: productsApi.reducer, // ✅ same here
   },
   // middleware: (getDefaultMiddleware) =>

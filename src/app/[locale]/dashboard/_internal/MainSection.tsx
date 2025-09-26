@@ -6,24 +6,54 @@ import { Textarea } from "@/components/ui/textarea";
 import { Linkedin, Mail, Globe, Phone, StickyNote } from "lucide-react";
 // import DownloadLink from "next/link";
 import { Link } from "@/i18n/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { createStructuredSelector } from "reselect";
+import { bindActionCreators } from "@reduxjs/toolkit";
+import { AppDispatch } from "@/redux/store";
+import { connect, useDispatch } from "react-redux";
+import { postDashboard } from "@/redux/dashboard/dashboard.action";
 
+interface PostDataProps {
+  data: any[];
+  error: any;
+  loading: boolean;
+}
 interface PageProps {
   locale: string;
+  actions: { postDashboard: typeof postDashboard };
+  postData: PostDataProps;
 }
-const MainSection = ({ locale }: PageProps) => {
+
+interface PageErrorProps {
+  comment: string;
+  name: string;
+  email: string;
+}
+
+const MainSection = ({ locale, actions, postData }: PageProps) => {
   const [formData, setFormData] = useState({
     email: "",
     customername: "",
     comment: "",
   });
+  const [error, setError] = useState<PageErrorProps | any>(null);
+
+  useEffect(() => {
+    const updateError = postData?.error?.error;
+
+    if (Array.isArray(updateError) && updateError.length > 0) {
+      setError(Object.assign({}, ...updateError));
+    } else {
+      setFormData({ email: "", customername: "", comment: "" });
+    }
+  }, [postData]);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
+    actions.postDashboard({ ...formData });
     alert(
       `Thank you for subscribing with ${formData.email}! We'll keep you updated on ReactJS.`
     );
-    setFormData({ email: "", customername: "", comment: "" });
   };
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -77,6 +107,9 @@ const MainSection = ({ locale }: PageProps) => {
                     required
                     className="mt-2"
                   />
+                  {error && error?.name && (
+                    <p className="text-red-600">{error?.name}</p>
+                  )}
                   <Input
                     id="email"
                     name="email"
@@ -87,6 +120,9 @@ const MainSection = ({ locale }: PageProps) => {
                     required
                     className="mt-2"
                   />
+                  {error && error?.email && (
+                    <p className="text-red-600">{error?.email}</p>
+                  )}
                   <Textarea
                     id="comment"
                     name="comment"
@@ -96,6 +132,9 @@ const MainSection = ({ locale }: PageProps) => {
                     required
                     className="mt-2"
                   />
+                  {error && error?.comment && (
+                    <p className="text-red-600">{error?.comment}</p>
+                  )}
                 </div>
                 <Button
                   type="submit"
@@ -163,4 +202,12 @@ const MainSection = ({ locale }: PageProps) => {
   );
 };
 
-export default MainSection;
+const mapDispatchToProps = (dispatch: AppDispatch) => ({
+  actions: bindActionCreators({ postDashboard }, dispatch),
+});
+
+const mapStateToProps = createStructuredSelector({
+  postData: (state) => state.feedback,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainSection);
