@@ -1,6 +1,8 @@
+import { useTranslations } from "next-intl";
 import React from "react";
 
 function FooterSection() {
+  const t = useTranslations("Footer");
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       {/* <div className="flex flex-col md:flex-row justify-between items-center">
@@ -39,7 +41,7 @@ function FooterSection() {
       </div> */}
       <div className="border-border text-center">
         <p className="text-sm text-muted-foreground font-bold  dark:text-white ">
-          © 2025 ReactJS. Built with React and love by developers worldwide.
+          {t("content")}
         </p>
       </div>
     </div>

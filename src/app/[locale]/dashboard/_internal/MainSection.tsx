@@ -13,6 +13,7 @@ import { AppDispatch } from "@/redux/store";
 import { connect, useDispatch } from "react-redux";
 import { postDashboard } from "@/redux/dashboard/dashboard.action";
 import toast from "react-hot-toast";
+import { useTranslations } from "next-intl";
 
 interface PostDataProps {
   data: any[];
@@ -32,6 +33,7 @@ interface PageErrorProps {
 }
 
 const MainSection = ({ locale, actions, postData }: PageProps) => {
+  const t = useTranslations("MainContent");
   const [formData, setFormData] = useState({
     email: "",
     customername: "",
@@ -68,19 +70,15 @@ const MainSection = ({ locale, actions, postData }: PageProps) => {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div id="features" className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-black text-foreground">
-          This website is built with Next.js and React.js
+          {t("headline")}
         </h2>
         <p className="mt-4 text-xl text-muted-foreground max-w-2xl mx-auto">
-          Featuring powerful tools that make React the leading choice for modern
-          web development, including Tailwind CSS, i18n for multilingual
-          support, Redux Toolkit, responsive design, email feedback integration,
-          and a robust backend powered by Node.js, Express, PostgreSQL, OAuth,
-          and JWT authentication.
+          {t("contentline")}
         </p>
       </div>
       <div id="community" className="text-center mb-4">
         <h2 className="text-3xl md:text-4xl font-black text-foreground">
-          Join with US
+          {t("joinWithUs")}
         </h2>
       </div>
       <div id="resources" className="max-w-4xl mx-auto">
@@ -88,11 +86,10 @@ const MainSection = ({ locale, actions, postData }: PageProps) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                Stay Updated
+                {t("stay_Updated")}
               </h3>
               <p className="text-muted-foreground mb-6">
-                Get the latest news, updates, and best practices delivered to
-                your inbox.
+                {t("stay_Updated_desc")}
               </p>
               <form onSubmit={handleSubscribe} className="space-y-4">
                 <div>
@@ -139,13 +136,13 @@ const MainSection = ({ locale, actions, postData }: PageProps) => {
                   type="submit"
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
                 >
-                  Feedback
+                  {t("feedback")}
                 </Button>
               </form>
             </div>
             <div className="d-flex content-center m-4">
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                Connect With Us
+                {t("connect_With_Us")}
               </h3>
               <div className="flex space-x-3">
                 {/* <Link
@@ -190,8 +187,7 @@ const MainSection = ({ locale, actions, postData }: PageProps) => {
                 </a>
               </div>
               <p className="text-muted-foreground mt-6">
-                Feel free to reach out through phone, email, LinkedIn, or my
-                site.
+                {t("connect_With_Us_desc")}
               </p>
             </div>
           </div>

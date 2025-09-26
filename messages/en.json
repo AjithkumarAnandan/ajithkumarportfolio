@@ -1,57 +1,21 @@
 {
   "Header": {
-    "name": "AK PORTFOLIO",
-    "role": "React JS Developer",
-    "phone": "+91 7708192049",
-    "email": "ajithkumaranandandev@gmail.com",
-    "linkedin": "ajithkumar-anandan-developer",
-    "location": "Gummidipoondi, Chennai, Tamil Nadu, India",
-    "linkedinLabel": "LinkedIn"
+    "AK_PORTFOLIO": "AK PORTFOLIO",
+    "Features": "Features",
+    "Community": "Community",
+    "Resources": "Resources"
   },
-  "Navigation": {
-    "home": "Home",
-    "about": "About",
-    "contact": "Contact",
-    "experience": "Experience"
+  "MainContent": {
+    "headline": "This website is built with Next.js and React.js",
+    "contentline": "Featuring powerful tools that make React the leading choice for modern web development, including Tailwind CSS, i18n for multilingual support, Redux Toolkit, responsive design, email feedback integration, and a robust backend powered by Node.js, Express, PostgreSQL, OAuth, and JWT authentication.",
+    "joinWithUs": "Join with US",
+    "stay_Updated": "Stay Updated",
+    "stay_Updated_desc": "Get the latest news, updates, and best practices delivered to your inbox.",
+    "feedback": "Feedback",
+    "connect_With_Us": "Connect With Us",
+    "connect_With_Us_desc": "Feel free to reach out through phone, email, LinkedIn, or my site."
   },
-  "Home": {
-    "homeText": "Next.js & React.js Developer with 5 years of experience in web application development, possessing a deep understanding of thesoftware development life cycle (SDLC). Proficient in building scalable, high-performance web applications using React.js, Next.js,JavaScript, TypeScript, CSS, and HTML. Skilled in designing modern UI/UX, implementing state management (Redux), optimizingperformance with SSR, SSG, and ISR, and integrating secure authentication methods (JWT, OAuth). Passionate about writing clean,maintainable code and delivering seamless user experiences.",
-    "aboutText": "I am a passionate developer who loves building things.",
-    "contactText": "You can reach me at ajithkumaranandandev@gmail.com.",
-    "experienceText": "I have 5+ years of experience in full-stack development."
-  },
-  "PersonalDetails": {
-    "PersonalDetails": "PersonalDetails",
-    "name": "Name",
-    "dob": "Date of Birth",
-    "age": "Age",
-    "bloodGroup": "Blood Group",
-    "maritalStatus": "Marriage Status",
-    "religion": "Religion",
-    "nativePlace": "Native Place",
-    "edit": "Edit",
-    "nameField": "A AJITHKUMAR",
-    "dobField": "05-06-1996",
-    "ageField": "29",
-    "bloodGroupField": "O+",
-    "maritalStatusField": "Single",
-    "religionField": "Hindu",
-    "cityField": "Chennai"
-  },
-
-  "EducationDetails": {
-    "EducationDetails": "EducationDetails",
-    "school": "School/College",
-    "degree": "Degree",
-    "fieldOfStudy": "Field of Study",
-    "yearOfGraduation": "Year of Graduation",
-    "grade": "Grade/Percentage",
-    "certifications": "Additional Certifications",
-    "schoolField": "T J S Engineering College",
-    "degreeField": "Bachelor of Enginnering",
-    "fieldOfStudyField": "Mechanical Engineering",
-    "yearOfGraduationField": "2018",
-    "gradeField": "72%",
-    "certificationsField": "Certified React Developer"
+  "Footer": {
+    "content": "© 2025 ReactJS. Built with React and love by developers worldwide."
   }
 }

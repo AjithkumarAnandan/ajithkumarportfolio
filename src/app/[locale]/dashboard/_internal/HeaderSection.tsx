@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import LangSwitcher from "@/lib/LangSwitcher";
 import ThemeToggle from "@/lib/ThemeToggle";
 import { Rocket } from "lucide-react";
+import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 
 interface PageProps {
@@ -10,7 +11,7 @@ interface PageProps {
 }
 function HeaderSection({ locale }: PageProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const t = useTranslations("Header");
   return (
     <>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,7 +22,7 @@ function HeaderSection({ locale }: PageProps) {
               <div className="flex h-10 w-10 items-center justify-center rounded-md bg-primary text-primary-foreground">
                 <Rocket className="h-6 w-6" />
               </div>
-              <span className="text-xl font-bold">AK PORTFOLIO</span>
+              <span className="text-xl font-bold">{t("AK_PORTFOLIO")}</span>
             </div>
           </Link>
 
@@ -36,19 +37,19 @@ function HeaderSection({ locale }: PageProps) {
               href="#features"
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
-              Features
+              {t("Features")}
             </Link>
             <Link
               href="#community"
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
-              Community
+              {t("Community")}
             </Link>
             <Link
               href="#resources"
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
-              Resources
+              {t("Resources")}
             </Link>
             <LangSwitcher />
             <ThemeToggle />
@@ -101,19 +102,19 @@ function HeaderSection({ locale }: PageProps) {
               href="#features"
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent transition-colors"
             >
-              Features
+              {t("Features")}
             </Link>
             <Link
               href="#community"
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent transition-colors"
             >
-              Community
+              {t("Community")}
             </Link>
             <Link
               href="#resources"
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent transition-colors"
             >
-              Resources
+              {t("Resources")}
             </Link>
           </div>
         )}
