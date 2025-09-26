@@ -55,3 +55,23 @@ export const postDashboard = createAsyncThunk<
     return rejectWithValue({ message: error.message } as MyErrorType);
   }
 });
+
+export const getFeedback = createAsyncThunk<
+  ProductTypeWithAll,
+  void,
+  { rejectValue: MyErrorType }
+>("feedback", async (_, { rejectWithValue }) => {
+  try {
+    const url = "/api/dashboard";
+    const response = await HTTP.doGet<ProductResponse>(url);
+    return { ...response.data };
+  } catch (err) {
+    const error = err as AxiosError<MyErrorType>;
+
+    if (error.response?.data) {
+      return rejectWithValue(error.response.data); // typed error response
+    }
+
+    return rejectWithValue({ message: error.message } as MyErrorType);
+  }
+});

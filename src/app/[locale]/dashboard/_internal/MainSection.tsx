@@ -12,6 +12,7 @@ import { bindActionCreators } from "@reduxjs/toolkit";
 import { AppDispatch } from "@/redux/store";
 import { connect, useDispatch } from "react-redux";
 import { postDashboard } from "@/redux/dashboard/dashboard.action";
+import toast from "react-hot-toast";
 
 interface PostDataProps {
   data: any[];
@@ -51,9 +52,7 @@ const MainSection = ({ locale, actions, postData }: PageProps) => {
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     actions.postDashboard({ ...formData });
-    alert(
-      `Thank you for subscribing with ${formData.email}! We'll keep you updated on ReactJS.`
-    );
+    toast.success(`Thank you for subscribing ${formData.customername}!.`);
   };
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

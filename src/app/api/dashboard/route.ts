@@ -71,3 +71,34 @@ export async function POST(req: NextRequest) {
     );
   }
 }
+
+export async function GET(req: NextRequest) {
+  try {
+    await postgresConnect();
+    await ensureTableExists();
+    const existingData = await Pool.query(
+      `SELECT * FROM fullstacknextjs."feedback"`
+    );
+    if (existingData?.rows?.length > 0) {
+      return NextResponse.json({
+        status: 200,
+        data: existingData.rows,
+        message: "Data fetched successfully",
+      });
+    } else {
+      return NextResponse.json({
+        status: 200,
+        data: [],
+        message: "No data found",
+      });
+    }
+  } catch (err) {
+    return NextResponse.json(
+      {
+        data: `${req.json()}`,
+        message: (err as Error).message ?? "Something went wrong",
+      },
+      { status: 500 }
+    );
+  }
+}

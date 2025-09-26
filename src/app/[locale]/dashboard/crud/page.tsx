@@ -4,6 +4,7 @@ import { ProductType } from "@/redux/crud/redux.action";
 import { Link } from "@/i18n/navigation";
 import { getServerSideProducts } from "@/redux/dashboard/getServerSideProducts";
 import AddPage from "./_internal/AddList";
+import FeedbackList from "./_internal/FeedbackList";
 
 export interface ProductProps {
   id?: number;
@@ -33,6 +34,7 @@ const CRUD = async ({ params }: PageProps) => {
   // );
 
   const state = await getServerSideProducts();
+
   const { products, error } = state.dashboard;
 
   if (error) {
@@ -92,6 +94,7 @@ const CRUD = async ({ params }: PageProps) => {
       >
         Dashboard
       </Link>
+      <FeedbackList />
     </>
   );
 };
