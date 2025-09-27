@@ -34,23 +34,25 @@ function HeaderSection({ locale }: PageProps) {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link
-              href="#features"
+              href="/about"
+              locale={locale}
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
-              {t("Features")}
+              {t("AboutSite")}
             </Link>
             <Link
-              href="#community"
+              href="/myself"
+              locale={locale}
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
-              {t("Community")}
+              {t("Myself")}
             </Link>
-            <Link
+            {/* <Link
               href="#resources"
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               {t("Resources")}
-            </Link>
+            </Link> */}
             <LangSwitcher />
             <ThemeToggle />
           </nav>
@@ -99,23 +101,23 @@ function HeaderSection({ locale }: PageProps) {
         {isMenuOpen && (
           <div className="absolute left-0 top-full w-screen md:hidden pb-3 pt-2 space-y-1 bg-amber-100 shadow-lg z-50 rounded-xl">
             <Link
-              href="#features"
+              href="#about"
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent transition-colors"
             >
-              {t("Features")}
+              {t("AboutSite")}
             </Link>
             <Link
-              href="#community"
+              href="#myself"
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent transition-colors"
             >
-              {t("Community")}
+              {t("Myself")}
             </Link>
-            <Link
+            {/* <Link
               href="#resources"
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent transition-colors"
             >
               {t("Resources")}
-            </Link>
+            </Link> */}
           </div>
         )}
       </div>

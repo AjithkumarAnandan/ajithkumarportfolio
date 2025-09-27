@@ -17,7 +17,7 @@ const LocaleLayout = async ({ params, children }: PageProps) => {
       {/* MainSection Section */}
       <section className="py-4 col-span-full md:col-span-6">{children}</section>
       {/* Footer */}
-      <footer className="border-t border-border py-2 col-span-full md:col-span-6 bg-amber-100  dark:bg-gray-500 w-full">
+      <footer className=" border-t border-border py-2 col-span-full md:col-span-6 bg-amber-100  dark:bg-gray-500 w-full">
         <FooterSection />
       </footer>
     </div>

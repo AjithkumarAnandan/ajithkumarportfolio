@@ -77,7 +77,7 @@ export async function GET(req: NextRequest) {
     await postgresConnect();
     await ensureTableExists();
     const existingData = await Pool.query(
-      `SELECT * FROM fullstacknextjs."feedback"`
+      `SELECT id,name,email,comment FROM fullstacknextjs."feedback"`
     );
     if (existingData?.rows?.length > 0) {
       return NextResponse.json({

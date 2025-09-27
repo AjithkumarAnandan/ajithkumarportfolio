@@ -87,14 +87,14 @@ const CRUD = async ({ params }: PageProps) => {
       </div>
 
       {/* Floating dashboard button */}
-      <Link
+      {/* <Link
         href="/dashboard"
         locale={locale}
         className="fixed bottom-6 right-6 bg-blue-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-blue-700 transition"
       >
         Dashboard
-      </Link>
-      <FeedbackList />
+      </Link> */}
+      {/* <FeedbackList /> */}
     </>
   );
 };

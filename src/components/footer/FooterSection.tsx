@@ -4,7 +4,7 @@ import React from "react";
 function FooterSection() {
   const t = useTranslations("Footer");
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
       {/* <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="flex items-center gap-2 mb-4 md:mb-0">
           <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground">
