@@ -1,11 +1,8 @@
 import React from "react";
 import EditField from "./_internal/EditDashboard";
 import { ProductType } from "@/redux/crud/redux.action";
-import { Link } from "@/i18n/navigation";
-import { getServerSideProducts } from "@/redux/dashboard/getServerSideProducts";
 import AddPage from "./_internal/AddList";
-import FeedbackList from "./_internal/FeedbackList";
-
+import { getServerSideProducts } from "@/redux/getServerSideProducts";
 export interface ProductProps {
   id?: number;
   title?: string;
