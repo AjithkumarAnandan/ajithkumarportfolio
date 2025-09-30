@@ -1,6 +1,6 @@
 import { postgresConnect } from "@/utils/dbConnect";
 import { NextRequest, NextResponse } from "next/server";
-import { z } from "zod";
+// import { z } from "zod";
 import Pool from "@/utils/postgresql";
 
 async function ensureTableExists() {

@@ -14,6 +14,7 @@ import { connect, useDispatch } from "react-redux";
 import { postDashboard } from "@/redux/dashboard/dashboard.action";
 import toast from "react-hot-toast";
 import { useTranslations } from "next-intl";
+import { isValidEmail } from "@/utils/isValidEmail";
 
 interface PostDataProps {
   data: any[];
@@ -43,7 +44,6 @@ const MainSection = ({ locale, actions, postData }: PageProps) => {
 
   useEffect(() => {
     const updateError = postData?.error?.error;
-
     if (Array.isArray(updateError) && updateError.length > 0) {
       setError(Object.assign({}, ...updateError));
     } else {
@@ -53,9 +53,16 @@ const MainSection = ({ locale, actions, postData }: PageProps) => {
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    actions.postDashboard({ ...formData });
-    toast.success(`Thank you for subscribing ${formData.customername}!.`);
+    if (isValidEmail(formData.email)) {
+      actions.postDashboard({ ...formData });
+      setError(null);
+      toast.success(`Thank you for subscribing ${formData.customername}!.`);
+    } else {
+      setError({ ...error, email: "Please check if this is a valid email." });
+      toast.error(`Invalid email ${formData.email}!.`);
+    }
   };
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
