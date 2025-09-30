@@ -4,8 +4,73 @@
     "Features": "அம்சங்கள்",
     "AboutSite": "இணையதளம்",
     "Myself": "என்னை பற்றி",
-    "Community": "சமூகங்கள்",
-    "Resources": "வளங்கள்"
+    "Resources": "வளங்கள்",
+    "siteowner": "தள உரிமையாளர்",
+    "Community": "சமூகம்",
+    "AboutFeedback": "பின்னூட்டம் பற்றி"
+  },
+  "siteowner": {
+    "navbar": {
+      "profile": "சுயவிவரம்",
+      "experience": "அனுபவம்",
+      "portfolio": "போர்ட்ஃபோலியோ",
+      "contact": "தொடர்பு"
+    },
+    "site": {
+      "Features": "விசேஷங்கள்",
+      "AboutSite": "தளத்தின் பற்றி",
+      "siteowner": "தள உரிமையாளர்",
+      "Community": "சமூகம்",
+      "Resources": "வளங்கள்",
+      "AboutFeedback": "பின்னூட்டம் பற்றி"
+    },
+    "header": {
+      "name": "அஜித் குமார் ஆனந்தன்",
+      "role": "Next.js மற்றும் React.js டெவலப்பர்"
+    },
+    "profile": {
+      "title": "சுயவிவரம்",
+      "name": "பெயர்",
+      "dob": "பிறந்த தேதி",
+      "qualification": "கல்வி",
+      "about": "என்னைப் பற்றி",
+      "aboutText": "இணைய பயன்பாடுகளில் அனுபவமுள்ள ஆர்வமுள்ள டெவலப்பர்."
+    },
+    "experience": {
+      "title": "அனுபவம் (5+ வருடங்கள்)",
+      "experience1": "ஹரிதா டெக் சர்வ்ஸ் பிரைவேட் லிமிடெட் - முன் அட்டை டெவலப்பர் (ஜூன் 2025 - ஜூலை 2025)",
+      "experience2": "ஷூட்ட்அப் டெக்னாலஜீஸ் பிரைவேட் லிமிடெட் - ரியாக்ட் ஜெஎஸ் டெவலப்பர் (ஏப்ரல் 2024 - ஏப்ரல் 2025)",
+      "experience3": "விவ்ரிதி கேபிடல் பிரைவேட் லிமிடெட் - ரியாக்ட் ஜெஎஸ் டெவலப்பர் (செப்டம்பர் 2023 - மார்ச் 2024)",
+      "experience4": "ஆப்ஸிஸ் டெக்னாலஜீஸ் பிரைவேட் லிமிடெட் - முன் அட்டை டெவலப்பர் (ஜூன் 2020 - ஆகஸ்ட் 2023)"
+    },
+    "skills": {
+      "title": "திறன்கள்",
+      "frontEndFrameworksTitle": "முன்புற கட்டமைப்புகள்",
+      "frontEndFrameworks": "React.js, Next.js",
+      "programmingLanguagesTitle": "நிரலாக்க மொழிகள்",
+      "programmingLanguages": "HTML5, CSS3, JavaScript, TypeScript, ES6, JSX",
+      "reactFeaturesTitle": "React அம்சங்கள்",
+      "reactFeatures": "React Hooks",
+      "stateManagementTitle": "நிலை மேலாண்மை",
+      "stateManagement": "Redux, Redux Toolkit",
+      "UILibraries&ToolsTitle": "UI நூலகங்கள் & கருவிகள்",
+      "UILibraries&Tools": "Ant Design, Material UI, Bootstrap, Chart.js, Tailwind CSS, jQuery, Radix UI, DLS(Design Language System)",
+      "webDevelopmentTitle": "வலை வளர்ச்சி",
+      "webDevelopment": "UI வடிவமைப்பு, முன்புற கட்டமைப்பு, பதிலளிக்கும் வடிவமைப்பு, குறுக்கு உலாவி இணக்கம்",
+      "development&DebuggingTitle": "வளர்ச்சி & பிழைத்திருத்தம்",
+      "development&Debugging": "RESTful APIs, Git, GitHub, npm, பிழைத்திருத்தம்",
+      "softwareDevelopmentPracticesTitle": "மென்பொருள் அபிவிருத்தி நடைமுறைகள்",
+      "softwareDevelopmentPractices": "Single Page Applications (SPAs), Agile/Scrum (Jira)",
+      "APIDevelopmentTitle": "API அபிவிருத்தி",
+      "APIDevelopment": "RESTful APIs, CRUD செயல்பாடுகள், அங்கீகாரம் & அனுமதி (JWT, OAuth)"
+    },
+    "contact": {
+      "title": "தொடர்பு",
+      "email": "மின்னஞ்சல்",
+      "phone": "தொலைபேசி",
+      "emailAddress": "ajithkumaranandandev@gmail.com",
+      "phoneNumber": "+91 7708192049"
+    }
   },
   "MainContent": {
     "headline": "இந்த இணையதளம் Next.js மற்றும் React.js கொண்டு உருவாக்கப்பட்டுள்ளது",

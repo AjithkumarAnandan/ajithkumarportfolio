@@ -38,14 +38,14 @@ function HeaderSection({ locale }: PageProps) {
               locale={locale}
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
-              {t("AboutSite")}
+              {t("AboutFeedback")}
             </Link>
             <Link
-              href="/myself"
+              href="/siteowner"
               locale={locale}
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
-              {t("Myself")}
+              {t("siteowner")}
             </Link>
             {/* <Link
               href="#resources"
@@ -104,13 +104,13 @@ function HeaderSection({ locale }: PageProps) {
               href="/about"
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent transition-colors"
             >
-              {t("AboutSite")}
+              {t("AboutFeedback")}
             </Link>
             <Link
-              href="/myself"
+              href="/siteowner"
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent transition-colors"
             >
-              {t("Myself")}
+              {t("siteowner")}
             </Link>
             {/* <Link
               href="#resources"

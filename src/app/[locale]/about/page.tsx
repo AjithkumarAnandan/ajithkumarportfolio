@@ -1,5 +1,5 @@
 "use client";
-import React, { memo, useEffect } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { ReactGrid, Column } from "@silevis/reactgrid";
 import "@silevis/reactgrid/styles.css";
 import { PersonGridProps } from "./_internal/type.grid";
@@ -11,8 +11,8 @@ import { AppDispatch } from "@/redux/store";
 
 function Page() {
   const dispatch: AppDispatch = useDispatch();
-  const [people, setPeople] = React.useState<PersonGridProps[]>([]);
-  const [columns, setColumns] = React.useState<Column[]>([
+  const [people, setPeople] = useState<PersonGridProps[]>([]);
+  const [columns, setColumns] = useState<Column[]>([
     { columnId: "name", resizable: true },
     { columnId: "email", resizable: true },
     { columnId: "comment", resizable: true },

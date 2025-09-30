@@ -3,9 +3,73 @@
     "AK_PORTFOLIO": "AK PORTFOLIO",
     "Features": "Features",
     "AboutSite": "About site",
-    "Myself": "Myself",
+    "siteowner": "Site Owner",
     "Community": "Community",
-    "Resources": "Resources"
+    "Resources": "Resources",
+    "AboutFeedback": "About Feedback"
+  },
+  "siteowner": {
+    "navbar": {
+      "profile": "Profile",
+      "experience": "Experience",
+      "portfolio": "Portfolio",
+      "contact": "Contact"
+    },
+    "site": {
+      "Features": "Features",
+      "AboutSite": "About site",
+      "siteowner": "Site Owner",
+      "Community": "Community",
+      "Resources": "Resources",
+      "AboutFeedback": "About Feedback"
+    },
+    "header": {
+      "name": "AJITHKUMAR ANANDAN",
+      "role": "Next.js and React.js Developer"
+    },
+    "profile": {
+      "title": "Profile",
+      "name": "Name",
+      "dob": "Date of Birth",
+      "qualification": "Qualification",
+      "about": "About Me",
+      "aboutText": "Passionate developer with experience in web applications."
+    },
+    "experience": {
+      "title": "Experience (5+ years)",
+      "experience1": "Frontend Developer at Harita Techserv Pvt Ltd (June 2025- July 2025)",
+      "experience2": "Reactjs Developer at Shootup Technologies Pvt Ltd (April 2024- April 2025)",
+      "experience3": "Reactjs Developer at Vivriti Capital Pvt Ltd (September 2023-March 2024)",
+      "experience4": "Frontend Developer at Apsis Technologies Pvt Ltd (June 2020- August 2023)"
+    },
+    "skills": {
+      "title": "Skills",
+      "frontEndFrameworksTitle": "Front-End Frameworks",
+      "frontEndFrameworks": "React.js, Next.js",
+      "programmingLanguagesTitle": " Programming Languages",
+      "programmingLanguages": "HTML5, CSS3, JavaScript, TypeScript, ES6, JSX",
+      "reactFeaturesTitle": "React Features",
+      "reactFeatures": "React Hooks",
+      "stateManagementTitle": "stateManagement",
+      "stateManagement": "Redux, Redux Toolkit",
+      "UILibraries&ToolsTitle": "UILibraries&Tools",
+      "UILibraries&Tools": "Ant Design, Material UI, Bootstrap, Chart.js, Tailwind CSS, jQuery, Radix UI, DLS(Design Language System)",
+      "webDevelopmentTitle": "Web Development",
+      "webDevelopment": "UI Design, Front-End Architecture, Responsive Design,  Cross-Browser Compatibility",
+      "development&DebuggingTitle": "Development & Debugging",
+      "development&Debugging": "RESTful APIs, Git, GitHub, npm, Debugging",
+      "softwareDevelopmentPracticesTitle": "softwareDevelopmentPractices",
+      "softwareDevelopmentPractices": "Single Page Applications (SPAs), Agile/Scrum (Jira)",
+      "APIDevelopmentTitle": "APIDevelopment",
+      "APIDevelopment": "RESTful APIs, CRUD Operations, Authentication & Authorization (JWT, OAuth)"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "Email",
+      "phone": "Phone",
+      "emailAddress": "ajithkumaranandandev@gmail.com",
+      "phoneNumber": "+91 7708192049"
+    }
   },
   "MainContent": {
     "headline": "This website is built with Next.js and React.js",
