@@ -16,14 +16,14 @@ async function ensureTableExists() {
 `);
 }
 
-const schema = z.object({
-  name: z.string().min(2, "Name is too short"),
-  email: z.string().email("Invalid email address"),
-  comment: z
-    .string()
-    .min(5, "Comment is too short")
-    .max(255, "Comment is too long"),
-});
+// const schema = z.object({
+//   name: z.string().min(2, "Name is too short"),
+//   email: z.string().email("Invalid email address"),
+//   comment: z
+//     .string()
+//     .min(5, "Comment is too short")
+//     .max(255, "Comment is too long"),
+// });
 //Post feedback
 export async function POST(req: NextRequest) {
   try {
@@ -31,29 +31,34 @@ export async function POST(req: NextRequest) {
     await ensureTableExists();
     const { name, email, comment } = await req.json(); // because this is a form POST
 
-    const result = await schema.safeParse({ name, email, comment });
+    // const result = await schema.safeParse({ name, email, comment });
 
-    if (!result.success) {
-      let error: any[] = [];
-      let message = "Something went wrong";
-      if (result?.error instanceof z.ZodError) {
-        error = result.error.issues.map((err) => ({
-          [err.path.join(".")]: err.message, // e.g., "user.email"
-        }));
-        message = "Validation fails";
-      }
-      return NextResponse.json(
-        {
-          error,
-          message,
-        },
-        { status: 403 }
-      );
-    }
+    // if (!result.success) {
+    //   let error: any[] = [];
+    //   let message = "Something went wrong";
+    //   if (result?.error instanceof z.ZodError) {
+    //     error = result.error.issues.map((err) => ({
+    //       [err.path.join(".")]: err.message, // e.g., "user.email"
+    //     }));
+    //     message = "Validation fails";
+    //   }
+    //   return NextResponse.json(
+    //     {
+    //       error,
+    //       message,
+    //     },
+    //     { status: 403 }
+    //   );
+    // }
+
+    // await Pool.query(
+    //   `INSERT INTO fullstacknextjs."feedback" (name, email, comment, created_at) VALUES ($1, $2, $3, $4)`,
+    //   [result.data.name, result.data.email, result.data.comment, new Date()]
+    // );
 
     await Pool.query(
       `INSERT INTO fullstacknextjs."feedback" (name, email, comment, created_at) VALUES ($1, $2, $3, $4)`,
-      [result.data.name, result.data.email, result.data.comment, new Date()]
+      [name, email, comment, new Date()]
     );
 
     return NextResponse.json({
@@ -109,25 +114,25 @@ export async function PUT(req: NextRequest) {
     await ensureTableExists();
     const { id: feedbackId, name, email, comment } = await req.json(); // because this is a form POST
 
-    const result = await schema.safeParse({ feedbackId, name, email, comment });
+    // const result = await schema.safeParse({ feedbackId, name, email, comment });
 
-    if (!result.success) {
-      let error: any[] = [];
-      let message = "Something went wrong";
-      if (result?.error instanceof z.ZodError) {
-        error = result.error.issues.map((err) => ({
-          [err.path.join(".")]: err.message, // e.g., "user.email"
-        }));
-        message = "Validation fails";
-      }
-      return NextResponse.json(
-        {
-          error,
-          message,
-        },
-        { status: 403 }
-      );
-    }
+    // if (!result.success) {
+    //   let error: any[] = [];
+    //   let message = "Something went wrong";
+    //   if (result?.error instanceof z.ZodError) {
+    //     error = result.error.issues.map((err) => ({
+    //       [err.path.join(".")]: err.message, // e.g., "user.email"
+    //     }));
+    //     message = "Validation fails";
+    //   }
+    //   return NextResponse.json(
+    //     {
+    //       error,
+    //       message,
+    //     },
+    //     { status: 403 }
+    //   );
+    // }
 
     // 1. Check if the row exists
     const existingData = await Pool.query(
