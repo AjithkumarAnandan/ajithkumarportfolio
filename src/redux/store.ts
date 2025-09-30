@@ -4,10 +4,12 @@ import {
   dashboardPutSlice,
   dashboardSlice,
 } from "./crud/redux.reducer";
+import { postDashboardSlice } from "./dashboard/dashboard.reducer";
 import {
+  deleteFeedbackSlice,
   getFeedbackSlice,
-  postDashboardSlice,
-} from "./dashboard/dashboard.reducer";
+  putFeedbackSlice,
+} from "./feedback/feedback.reducer";
 export const reduxstore = (preloadedState = {}) => {
   return configureStore({
     reducer: {
@@ -25,7 +27,12 @@ export const reduxclientstore = configureStore({
   reducer: {
     dashboardUpdate: dashboardPutSlice.reducer,
     dashboardDelete: dashboardDeleteSlice.reducer,
-    feedback: postDashboardSlice.reducer,
+    feedback: combineReducers({
+      postFeedback: postDashboardSlice.reducer,
+      putFeedback: putFeedbackSlice.reducer,
+      deleteFeedback: deleteFeedbackSlice.reducer,
+    }),
+
     // [productsApi.reducerPath]: productsApi.reducer, // ✅ same here
   },
   // middleware: (getDefaultMiddleware) =>

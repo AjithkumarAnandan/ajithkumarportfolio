@@ -1,16 +1,20 @@
+import { putFeedback } from "@/redux/feedback/feedback.action";
 import { AnyCellChange, PersonGridProps } from "./type.grid";
+import { AppDispatch } from "@/redux/store";
+
 export const applyChangesToPeople = (
   cellChanges: AnyCellChange[],
-  prevPeople: PersonGridProps[]
+  prevPeople: PersonGridProps[],
+  dispatch: AppDispatch
 ): PersonGridProps[] => {
   const updated = [...prevPeople];
   cellChanges.forEach((change: any) => {
     const personIndex = updated.findIndex(
-      (p: any) => Number(p.id) - 1 === Number(change.rowId.split("-")?.[1])
+      (p: any) => Number(p.id) === Number(change.previousCell.id)
     );
 
     if (personIndex === -1) return;
-    const person = { ...updated[personIndex] };
+    const person: PersonGridProps | undefined = { ...updated[personIndex] };
 
     switch (change.type) {
       case "text":
@@ -26,6 +30,8 @@ export const applyChangesToPeople = (
       //     .value as any;
       //   break;
     }
+
+    dispatch(putFeedback(person));
     updated[personIndex] = person;
   });
 

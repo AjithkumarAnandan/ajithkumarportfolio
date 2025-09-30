@@ -101,13 +101,13 @@ function HeaderSection({ locale }: PageProps) {
         {isMenuOpen && (
           <div className="absolute left-0 top-full w-screen md:hidden pb-3 pt-2 space-y-1 bg-amber-100 shadow-lg z-50 rounded-xl">
             <Link
-              href="#about"
+              href="/about"
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent transition-colors"
             >
               {t("AboutSite")}
             </Link>
             <Link
-              href="#myself"
+              href="/myself"
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent transition-colors"
             >
               {t("Myself")}

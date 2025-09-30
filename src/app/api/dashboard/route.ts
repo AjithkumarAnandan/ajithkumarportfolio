@@ -102,3 +102,63 @@ export async function GET(req: NextRequest) {
     );
   }
 }
+
+export async function PUT(req: NextRequest) {
+  try {
+    await postgresConnect();
+    await ensureTableExists();
+    const { id: feedbackId, name, email, comment } = await req.json(); // because this is a form POST
+
+    const result = await schema.safeParse({ feedbackId, name, email, comment });
+
+    if (!result.success) {
+      let error: any[] = [];
+      let message = "Something went wrong";
+      if (result?.error instanceof z.ZodError) {
+        error = result.error.issues.map((err) => ({
+          [err.path.join(".")]: err.message, // e.g., "user.email"
+        }));
+        message = "Validation fails";
+      }
+      return NextResponse.json(
+        {
+          error,
+          message,
+        },
+        { status: 403 }
+      );
+    }
+
+    // 1. Check if the row exists
+    const existingData = await Pool.query(
+      `SELECT id FROM fullstacknextjs."feedback" WHERE id = $1`,
+      [feedbackId]
+    );
+    if (existingData.rowCount === 0) {
+      return NextResponse.json({
+        status: 400,
+        message: "Data not found",
+      });
+    }
+
+    await Pool.query(
+      `UPDATE fullstacknextjs."feedback"
+   SET name = $1, email = $2, comment = $3
+   WHERE id = $4`,
+      [name, email, comment, feedbackId]
+    );
+
+    return NextResponse.json({
+      status: 201,
+      message: "Feedback submitted successfully",
+    });
+  } catch (error) {
+    return NextResponse.json(
+      {
+        data: `${req.json()}`,
+        message: (error as Error).message ?? "Something went wrong",
+      },
+      { status: 500 }
+    );
+  }
+}

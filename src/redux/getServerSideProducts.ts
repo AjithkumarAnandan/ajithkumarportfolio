@@ -1,6 +1,6 @@
-import { getFetchProducts } from "../crud/redux.action";
-import { reduxstore } from "../store";
-import { getFeedback } from "./dashboard.action";
+import { getFetchProducts } from "./crud/redux.action";
+import { getFeedback } from "./feedback/feedback.action";
+import { reduxstore } from "./store";
 
 export async function getServerSideProducts() {
   const store = reduxstore();

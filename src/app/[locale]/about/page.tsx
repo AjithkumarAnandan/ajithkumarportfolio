@@ -2,12 +2,15 @@
 import React, { memo, useEffect } from "react";
 import { ReactGrid, Column } from "@silevis/reactgrid";
 import "@silevis/reactgrid/styles.css";
-import { AnyCellChange, PersonGridProps } from "./_internal/type.grid";
-import { getPeople, getRows } from "./_internal/getRows.gridtable";
+import { PersonGridProps } from "./_internal/type.grid";
+import { getRows } from "./_internal/getRows.gridtable";
 import { applyChangesToPeople } from "./_internal/applyChangesToPeople";
+import { getServerSideFeedback } from "@/redux/getServerSideProducts";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/redux/store";
 
 function Page() {
-  // console.log("getPeople", test);
+  const dispatch: AppDispatch = useDispatch();
   const [people, setPeople] = React.useState<PersonGridProps[]>([]);
   const [columns, setColumns] = React.useState<Column[]>([
     { columnId: "name", resizable: true },
@@ -17,10 +20,21 @@ function Page() {
 
   useEffect(() => {
     async function peopleFetch() {
-      const data = await getPeople();
-      console.log("data", data);
-      setPeople(data);
+      try {
+        const state = await getServerSideFeedback();
+        const feedback = state?.feedback?.data?.data ?? [];
+        const error = state?.feedback?.error;
+        if (error) {
+          console.error("Error fetching feedback:", error);
+          return [];
+        }
+        setPeople(feedback);
+      } catch (err) {
+        console.error("Unexpected error while fetching feedback:", err);
+        return [];
+      }
     }
+
     peopleFetch();
   }, []);
 
@@ -41,8 +55,10 @@ function Page() {
   const rows = getRows(people);
 
   const handleChanges = (cellChanges: any): void => {
-    console.log("cellChanges,cellChanges", cellChanges);
-    setPeople((prevPeople) => applyChangesToPeople(cellChanges, prevPeople));
+    // console.log("cellChanges,cellChanges", cellChanges);
+    setPeople((prevPeople) =>
+      applyChangesToPeople(cellChanges, prevPeople, dispatch)
+    );
   };
 
   // const simpleHandleContextMenu = (

@@ -7,6 +7,7 @@ import {
 } from "@silevis/reactgrid";
 
 export interface PersonGridProps {
+  id?: number | string;
   name: string;
   email: string;
   comment: string;
