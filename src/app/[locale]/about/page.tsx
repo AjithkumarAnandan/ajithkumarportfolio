@@ -1,13 +1,13 @@
 "use client";
 import React, { memo, useEffect, useState } from "react";
 import { ReactGrid, Column } from "@silevis/reactgrid";
-import "@silevis/reactgrid/styles.css";
 import { PersonGridProps } from "./_internal/type.grid";
 import { getRows } from "./_internal/getRows.gridtable";
 import { applyChangesToPeople } from "./_internal/applyChangesToPeople";
 import { getServerSideFeedback } from "@/redux/getServerSideProducts";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
+import ReactGridField from "./_internal/ReactGridField";
 
 function Page() {
   const dispatch: AppDispatch = useDispatch();
@@ -69,7 +69,7 @@ function Page() {
   // ): MenuOption[] => {
   //   return menuOptions;
   // };
-
+  // console.log("ROWSROWS", JSON.stringify(rows));
   return (
     <>
       <div style={{ width: "auto", height: "auto" }}>
@@ -88,6 +88,10 @@ function Page() {
           // onContextMenu={simpleHandleContextMenu}
           enableGroupIdRender
         />
+
+        {/* <br />
+        <hr /> */}
+        {/* <ReactGridField /> */}
       </div>
     </>
   );

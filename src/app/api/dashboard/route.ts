@@ -69,7 +69,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     return NextResponse.json(
       {
-        data: `${req.json()}`,
+        data: JSON.stringify(error),
         message: (error as Error).message ?? "Something went wrong",
       },
       { status: 500 }
@@ -100,7 +100,7 @@ export async function GET(req: NextRequest) {
   } catch (err) {
     return NextResponse.json(
       {
-        data: `${req.json()}`,
+        data: JSON.stringify(err),
         message: (err as Error).message ?? "Something went wrong",
       },
       { status: 500 }

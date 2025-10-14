@@ -1,0 +1,49 @@
+version: "3.9"
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: frontend-build
+    container_name: frontend
+    env_file:
+      - .env.docker
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - "8080:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+    command:
+      [
+        "sh",
+        "-c",
+        "until pg_isready -h db -p 5432 -U postgres; do echo 'Waiting for DB...'; sleep 2; done; npm run dev",
+      ]
+    restart: always
+
+  db:
+    image: postgres:16
+    container_name: db
+    env_file:
+      - .env.docker
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: fullstacknextjs
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d fullstacknextjs"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - data_sql:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+    restart: on-failure
+volumes:
+  data_sql:

@@ -1,0 +1,143 @@
+{
+  "columns": [
+    { "columnId": "organization_period", "width": 250 },
+    { "columnId": "2020", "width": 100 },
+    { "columnId": "2020_Q1", "width": 80 },
+    { "columnId": "2020_Q2", "width": 80 },
+    { "columnId": "2020_Q3", "width": 80 },
+    { "columnId": "2020_Q4", "width": 80 },
+    { "columnId": "2021", "width": 100 },
+    { "columnId": "2021_Q1", "width": 80 },
+    { "columnId": "2021_Q2", "width": 80 },
+    { "columnId": "2021_Q3", "width": 80 },
+    { "columnId": "2021_Q4", "width": 80 },
+    { "columnId": "2022", "width": 100 },
+    { "columnId": "2022_Q1", "width": 80 },
+    { "columnId": "2022_Q2", "width": 80 },
+    { "columnId": "2022_Q3", "width": 80 },
+    { "columnId": "2022_Q4", "width": 80 }
+  ],
+  "rows": [
+    {
+      "rowId": "header",
+      "cells": [
+        {
+          "id": "header_organization_period",
+          "type": "header",
+          "text": "Organization / Period"
+        },
+        { "id": "header_2020", "type": "header", "text": "2020" },
+        { "id": "header_2020_Q1", "type": "header", "text": "Q1" },
+        { "id": "header_2020_Q2", "type": "header", "text": "Q2" },
+        { "id": "header_2020_Q3", "type": "header", "text": "Q3" },
+        { "id": "header_2020_Q4", "type": "header", "text": "Q4" },
+        { "id": "header_2021", "type": "header", "text": "2021" },
+        { "id": "header_2021_Q1", "type": "header", "text": "Q1" },
+        { "id": "header_2021_Q2", "type": "header", "text": "Q2" },
+        { "id": "header_2021_Q3", "type": "header", "text": "Q3" },
+        { "id": "header_2021_Q4", "type": "header", "text": "Q4" },
+        { "id": "header_2022", "type": "header", "text": "2022" },
+        { "id": "header_2022_Q1", "type": "header", "text": "Q1" },
+        { "id": "header_2022_Q2", "type": "header", "text": "Q2" },
+        { "id": "header_2022_Q3", "type": "header", "text": "Q3" },
+        { "id": "header_2022_Q4", "type": "header", "text": "Q4" }
+      ]
+    },
+    {
+      "rowId": "silevis_org",
+      "cells": [
+        {
+          "id": "silevis_org_organization_period",
+          "type": "text",
+          "text": "Silevis organization"
+        },
+        { "id": "silevis_org_2020", "type": "number", "value": 1533895.8 },
+        { "id": "silevis_org_2020_Q1", "type": "number", "value": 453450.0 },
+        { "id": "silevis_org_2020_Q2", "type": "number", "value": 411844.3 },
+        { "id": "silevis_org_2020_Q3", "type": "number", "value": 420000.0 },
+        { "id": "silevis_org_2020_Q4", "type": "number", "value": 248601.5 },
+        { "id": "silevis_org_2021", "type": "number", "value": 1620000.0 },
+        { "id": "silevis_org_2021_Q1", "type": "number", "value": 460000.0 },
+        { "id": "silevis_org_2021_Q2", "type": "number", "value": 420000.0 },
+        { "id": "silevis_org_2021_Q3", "type": "number", "value": 400000.0 },
+        { "id": "silevis_org_2021_Q4", "type": "number", "value": 340000.0 },
+        { "id": "silevis_org_2022", "type": "number", "value": 1710000.0 },
+        { "id": "silevis_org_2022_Q1", "type": "number", "value": 480000.0 },
+        { "id": "silevis_org_2022_Q2", "type": "number", "value": 430000.0 },
+        { "id": "silevis_org_2022_Q3", "type": "number", "value": 420000.0 },
+        { "id": "silevis_org_2022_Q4", "type": "number", "value": 380000.0 }
+      ]
+    },
+    {
+      "rowId": "expenses",
+      "cells": [
+        {
+          "id": "expenses_organization_period",
+          "type": "text",
+          "text": "Expenses"
+        },
+        { "id": "expenses_2020", "type": "number", "value": 1210228.64 },
+        { "id": "expenses_2020_Q1", "type": "number", "value": 354248.0 },
+        { "id": "expenses_2020_Q2", "type": "number", "value": 323563.44 },
+        { "id": "expenses_2020_Q3", "type": "number", "value": 310000.0 },
+        { "id": "expenses_2020_Q4", "type": "number", "value": 222417.2 },
+        { "id": "expenses_2021", "type": "number", "value": 1280000.0 },
+        { "id": "expenses_2021_Q1", "type": "number", "value": 370000.0 },
+        { "id": "expenses_2021_Q2", "type": "number", "value": 340000.0 },
+        { "id": "expenses_2021_Q3", "type": "number", "value": 320000.0 },
+        { "id": "expenses_2021_Q4", "type": "number", "value": 250000.0 },
+        { "id": "expenses_2022", "type": "number", "value": 1350000.0 },
+        { "id": "expenses_2022_Q1", "type": "number", "value": 400000.0 },
+        { "id": "expenses_2022_Q2", "type": "number", "value": 350000.0 },
+        { "id": "expenses_2022_Q3", "type": "number", "value": 330000.0 },
+        { "id": "expenses_2022_Q4", "type": "number", "value": 270000.0 }
+      ]
+    },
+    {
+      "rowId": "fixed",
+      "cells": [
+        { "id": "fixed_organization_period", "type": "text", "text": "Fixed" },
+        { "id": "fixed_2020", "type": "number", "value": 754161.48 },
+        { "id": "fixed_2020_Q1", "type": "number", "value": 179046.0 },
+        { "id": "fixed_2020_Q2", "type": "number", "value": 185282.58 },
+        { "id": "fixed_2020_Q3", "type": "number", "value": 190000.0 },
+        { "id": "fixed_2020_Q4", "type": "number", "value": 199832.9 },
+        { "id": "fixed_2021", "type": "number", "value": 790000.0 },
+        { "id": "fixed_2021_Q1", "type": "number", "value": 195000.0 },
+        { "id": "fixed_2021_Q2", "type": "number", "value": 200000.0 },
+        { "id": "fixed_2021_Q3", "type": "number", "value": 205000.0 },
+        { "id": "fixed_2021_Q4", "type": "number", "value": 190000.0 },
+        { "id": "fixed_2022", "type": "number", "value": 820000.0 },
+        { "id": "fixed_2022_Q1", "type": "number", "value": 210000.0 },
+        { "id": "fixed_2022_Q2", "type": "number", "value": 205000.0 },
+        { "id": "fixed_2022_Q3", "type": "number", "value": 205000.0 },
+        { "id": "fixed_2022_Q4", "type": "number", "value": 200000.0 }
+      ]
+    },
+    {
+      "rowId": "salaries",
+      "cells": [
+        {
+          "id": "salaries_organization_period",
+          "type": "text",
+          "text": "Salaries"
+        },
+        { "id": "salaries_2020", "type": "number", "value": 397211.52 },
+        { "id": "salaries_2020_Q1", "type": "number", "value": 93000.0 },
+        { "id": "salaries_2020_Q2", "type": "number", "value": 97201.92 },
+        { "id": "salaries_2020_Q3", "type": "number", "value": 101000.0 },
+        { "id": "salaries_2020_Q4", "type": "number", "value": 106009.6 },
+        { "id": "salaries_2021", "type": "number", "value": 420000.0 },
+        { "id": "salaries_2021_Q1", "type": "number", "value": 100000.0 },
+        { "id": "salaries_2021_Q2", "type": "number", "value": 105000.0 },
+        { "id": "salaries_2021_Q3", "type": "number", "value": 107000.0 },
+        { "id": "salaries_2021_Q4", "type": "number", "value": 108000.0 },
+        { "id": "salaries_2022", "type": "number", "value": 450000.0 },
+        { "id": "salaries_2022_Q1", "type": "number", "value": 110000.0 },
+        { "id": "salaries_2022_Q2", "type": "number", "value": 112000.0 },
+        { "id": "salaries_2022_Q3", "type": "number", "value": 113000.0 },
+        { "id": "salaries_2022_Q4", "type": "number", "value": 115000.0 }
+      ]
+    }
+  ]
+}

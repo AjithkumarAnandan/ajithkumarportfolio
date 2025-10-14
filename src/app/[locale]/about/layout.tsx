@@ -1,6 +1,7 @@
 import FooterSection from "@/components/footer/FooterSection";
 import HeaderSection from "@/components/header/HeaderSection";
 import React from "react";
+import "@silevis/reactgrid/styles.css";
 
 interface PageProps {
   params: { locale: string } | Promise<{ locale: string }>;

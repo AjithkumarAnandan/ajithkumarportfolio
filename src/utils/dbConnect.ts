@@ -1,32 +1,21 @@
 import express from "express";
 import cors from "cors";
-import { Pool } from "pg";
 import dotenv from "dotenv";
+import Pool from "./postgresql";
 dotenv.config();
 const app = express();
-const port = process.env.HOST_ENV ?? "";
-
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false, // only if you face SSL errors (Neon uses SSL)
-  },
-  // host: process.env.PG_HOST ?? "localhost",
-  // port: parseInt(process.env.PG_PORT ?? "5432", 10),
-  // user: process.env.PG_USER ?? "postgres",
-  // password: process.env.PG_PASSWORD,
-  // database: process.env.PG_DATABASE ?? "fullstacknextjs",
-});
+const port = process.env.HOST_ENV ?? "http://localhost:3000";
 
 const postgresConnect = async () => {
   try {
     // Connect to PostgreSQL
-    await pool.connect();
-    if (!pool) {
+    await Pool.connect();
+    if (!Pool) {
       throw new Error(
         "❌ POSTGRES_URI is not defined in environment variables."
       );
     }
+    // console.log("Environment Variables:", process.env.PG_DATABASE);
     console.log("✅ PostgreSQL connected successfully");
   } catch (error) {
     console.error("❌ PostgreSQL connection failed:", (error as Error).message);
@@ -34,13 +23,11 @@ const postgresConnect = async () => {
   }
 };
 
-// CORS middleware configuration
-const corsOptions = {
-  origin: port, // Replace with your frontend URL
-  methods: "GET,POST,PUT,DELETE,HEAD,PATCH", // Allowable methods
-};
-
-app.use(cors(corsOptions));
-
-// export { dbConnect, postgresConnect };
+// CORS
+app.use(
+  cors({
+    origin: port,
+    methods: "GET,POST,PUT,DELETE,HEAD,PATCH",
+  })
+);
 export { postgresConnect };

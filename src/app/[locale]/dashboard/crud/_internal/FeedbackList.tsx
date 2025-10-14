@@ -1,5 +1,6 @@
+import { getServerSideFeedback } from "@/redux/getServerSideProducts";
 import React from "react";
-import { getServerSideFeedback } from "@/redux/dashboard/getServerSideProducts";
+// import { getServerSideFeedback } from "@/redux/dashboard/getServerSideProducts";
 
 async function FeedbackList() {
   const state = await getServerSideFeedback();
