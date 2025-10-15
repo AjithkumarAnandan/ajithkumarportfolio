@@ -4,7 +4,7 @@ RUN apk add --no-cache postgresql-client
 WORKDIR /app
 
 # Copy package files and install
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json .env.docker ./
 RUN npm install
 
 # Copy all source files
