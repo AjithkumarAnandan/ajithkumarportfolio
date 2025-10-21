@@ -3,8 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const pool = new Pool({
-  connectionString: "postgresql://postgres:password@localhost:5432/fullstacknextjs?sslmode=disable"
-,
+  connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false, // only if you face SSL errors (Neon uses SSL)
   },

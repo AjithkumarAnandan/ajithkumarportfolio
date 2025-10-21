@@ -40,3 +40,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 Used to enable server-side rendering (SSR) in Global state management
 
 93cc42599a7c11e847bbd9ac7e9fe5e9cf535b6c4c9142b09181ac3f5ecf1dc0
+
+
+// .env 
+DATABASE_URL created local 
