@@ -1,20 +1,10 @@
 import { postgresConnect } from "@/utils/dbConnect";
 import { NextRequest, NextResponse } from "next/server";
 // import { z } from "zod";
-import Pool from "@/utils/postgresql";
+import pool from "@/utils/postgresql";
+import { ensureFeedbackTableExists } from "@/utils/ensureTableExists";
 
-async function ensureTableExists() {
-  await Pool.query(`CREATE SCHEMA IF NOT EXISTS fullstacknextjs`);
-  await Pool.query(`
-  CREATE TABLE IF NOT EXISTS fullstacknextjs."feedback" (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL CHECK (email ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$'),
-    comment VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT NOW()
-  )
-`);
-}
+
 
 // const schema = z.object({
 //   name: z.string().min(2, "Name is too short"),
@@ -28,7 +18,7 @@ async function ensureTableExists() {
 export async function POST(req: NextRequest) {
   try {
     await postgresConnect();
-    await ensureTableExists();
+    await ensureFeedbackTableExists();
     const { name, email, comment } = await req.json(); // because this is a form POST
 
     // const result = await schema.safeParse({ name, email, comment });
@@ -51,12 +41,12 @@ export async function POST(req: NextRequest) {
     //   );
     // }
 
-    // await Pool.query(
+    // await pool.query(
     //   `INSERT INTO fullstacknextjs."feedback" (name, email, comment, created_at) VALUES ($1, $2, $3, $4)`,
     //   [result.data.name, result.data.email, result.data.comment, new Date()]
     // );
 
-    await Pool.query(
+    await pool.query(
       `INSERT INTO fullstacknextjs."feedback" (name, email, comment, created_at) VALUES ($1, $2, $3, $4)`,
       [name, email, comment, new Date()]
     );
@@ -80,8 +70,8 @@ export async function POST(req: NextRequest) {
 export async function GET(req: NextRequest) {
   try {
     await postgresConnect();
-    await ensureTableExists();
-    const existingData = await Pool.query(
+    await ensureFeedbackTableExists();
+    const existingData = await pool.query(
       `SELECT id,name,email,comment FROM fullstacknextjs."feedback"`
     );
     if (existingData?.rows?.length > 0) {
@@ -111,7 +101,7 @@ export async function GET(req: NextRequest) {
 export async function PUT(req: NextRequest) {
   try {
     await postgresConnect();
-    await ensureTableExists();
+    await ensureFeedbackTableExists();
     const { id: feedbackId, name, email, comment } = await req.json(); // because this is a form POST
 
     // const result = await schema.safeParse({ feedbackId, name, email, comment });
@@ -135,7 +125,7 @@ export async function PUT(req: NextRequest) {
     // }
 
     // 1. Check if the row exists
-    const existingData = await Pool.query(
+    const existingData = await pool.query(
       `SELECT id FROM fullstacknextjs."feedback" WHERE id = $1`,
       [feedbackId]
     );
@@ -146,7 +136,7 @@ export async function PUT(req: NextRequest) {
       });
     }
 
-    await Pool.query(
+    await pool.query(
       `UPDATE fullstacknextjs."feedback"
    SET name = $1, email = $2, comment = $3
    WHERE id = $4`,

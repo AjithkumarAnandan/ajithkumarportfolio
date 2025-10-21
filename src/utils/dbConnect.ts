@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import Pool from "./postgresql";
+import pool from "./postgresql";
 dotenv.config();
 const app = express();
 const port = process.env.HOST_ENV ?? "http://localhost:3000";
@@ -9,8 +9,9 @@ const port = process.env.HOST_ENV ?? "http://localhost:3000";
 const postgresConnect = async () => {
   try {
     // Connect to PostgreSQL
-    await Pool.connect();
-    if (!Pool) {
+   await pool.connect();
+
+    if (!pool) {
       throw new Error(
         "❌ POSTGRES_URI is not defined in environment variables."
       );

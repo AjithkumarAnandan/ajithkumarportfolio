@@ -1,23 +1,16 @@
 import { postgresConnect } from "@/utils/dbConnect";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import Pool from "@/utils/postgresql";
+import pool from "@/utils/postgresql";
+import { ensureServersideTableExists } from "@/utils/ensureTableExists";
 
-async function ensureTableExists() {
-  await Pool.query(`CREATE SCHEMA IF NOT EXISTS fullstacknextjs`);
-  await Pool.query(`CREATE TABLE IF NOT EXISTS fullstacknextjs."serverside" (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(255) NOT null,
-  created_at TIMESTAMP DEFAULT NOW()
- )
-  `);
-}
+
 
 export const GET = async () => {
   try {
     await postgresConnect();
-    await ensureTableExists();
-    const existingData = await Pool.query(
+    await ensureServersideTableExists();
+    const existingData = await pool.query(
       `SELECT * FROM fullstacknextjs."serverside"`
     );
     if (existingData.rows.length > 0) {
@@ -49,7 +42,7 @@ const schema = z.object({
 export async function POST(req: NextRequest) {
   try {
     await postgresConnect();
-    await ensureTableExists();
+    await ensureServersideTableExists();
     const { name } = await req.json(); // because this is a form POST
 
     const result = schema.safeParse({ name });
@@ -61,7 +54,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    await Pool.query(
+    await pool.query(
       `INSERT INTO fullstacknextjs."serverside" (name, created_at) VALUES ($1, $2)`,
       [result.data.name, new Date()]
     );
