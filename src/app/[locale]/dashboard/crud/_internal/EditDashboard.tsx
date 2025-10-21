@@ -4,10 +4,9 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { ProductProps } from "../page";
-import { AppDispatch, AppStore } from "@/redux/store";
+import { AppDispatch } from "@/redux/store";
 import { deleteProduct, putProducts } from "@/redux/crud/redux.action";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 type Product = {
   id: string;
