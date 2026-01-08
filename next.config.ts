@@ -11,6 +11,15 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: "/ecommerce/:path*",
+        destination: "https://ajithkumaranandanecommerce.vercel.app/ecommerce/:path*",
+        permanent: false,
+      }
+    ]
+  },
   eslint: {
     ignoreDuringBuilds: true, // ✅ Skip ESLint
   },
@@ -21,7 +30,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [new URL("https://storage.googleapis.com/**")],
   },
-  allowedDevOrigins: ["http://localhost:3000", "http://127.0.0.1:3000"],
+  allowedDevOrigins: ["http://localhost:3000", "http://127.0.0.1:3000", "https://ajithkumaranandanecommerce.vercel.app", "https://ajithkumaranandanportfolio.vercel.app"],
 };
 
 const withNextIntl = createNextIntlPlugin();
