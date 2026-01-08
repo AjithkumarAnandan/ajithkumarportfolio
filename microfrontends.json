@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/microfrontends.json",
+  "applications": {
+    "ajithkumaranandanportfolio": {
+      "development": {
+        "fallback": "ajithkumarportfolio-akbazar.vercel.app"
+      }
+    },
+    "ajithkumaranandanecommerce": {
+      "routing": [
+        {
+          "paths": ["/ecommerce"]
+        }
+      ]
+    }
+  }
+}
