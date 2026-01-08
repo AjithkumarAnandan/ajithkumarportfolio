@@ -16,7 +16,6 @@ const nextConfig: NextConfig = {
       {
         source: "/ecommerce/:path*",
         destination: "https://ajithkumaranandanecommerce.vercel.app/ecommerce/:path*",
-        permanent: false,
       }
     ]
   },
